@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+venv/
+proposal.md
+upwork-message.txt
+screenshot.png
