@@ -5,6 +5,12 @@ from agent import EXAMPLE_INQUIRIES, EXAMPLE_REQUESTS, PROPERTIES, draft_reply, 
 
 st.set_page_config(page_title="Property Management AI Agent", page_icon="🏠", layout="wide")
 
+
+def esc(text):
+    """Streamlit markdown treats paired $ signs as LaTeX, so escape them."""
+    return text.replace("$", "\\$")
+
+
 st.title("Property Management AI Agent")
 st.write(
     "Two of the daily jobs from your list, working end to end: qualifying a new rental inquiry and "
@@ -28,9 +34,9 @@ with tab1:
         c3.metric("Flag team", "YES" if q["flag_team"] else "no")
         st.markdown("**Why this rating**")
         for r in q["reasons"]:
-            st.markdown(f"- {r}")
+            st.markdown(f"- {esc(r)}")
         st.markdown("**Drafted reply**")
-        st.info(reply)
+        st.info(esc(reply))
         with st.expander("Facts extracted from the message"):
             st.json(q["facts"])
 
@@ -47,7 +53,7 @@ with tab2:
         if r["escalate_to_owner"]:
             st.error("Emergency: the owner is alerted by text at the same time as the vendor.")
         st.markdown("**Auto-reply to tenant**")
-        st.info(r["reply"])
+        st.info(esc(r["reply"]))
         st.markdown("**Message sent to vendor**")
         st.code(r["vendor_message"], language=None)
 

@@ -15,7 +15,7 @@ PROPERTIES = [
 ]
 
 VENDORS = {"plumbing": "Sam's Plumbing", "electrical": "Bright Electric", "hvac": "CoolAir HVAC",
-           "appliance": "Fixit Appliance", "gas": "Owner + gas utility emergency line", "pest": "Green Pest Control", "lockout": "Handyman (on call)", "other": "Handyman (on call)"}
+           "appliance": "Fixit Appliance", "gas": "Owner + gas utility", "pest": "Green Pest Control", "lockout": "Handyman (on call)", "other": "Handyman (on call)"}
 
 EXAMPLE_INQUIRIES = {
     "Hot lead (Furnished Finder)": "Hi! Travel nurse here, need a place from Oct 20 for 3 months. Just me, budget up to $1800/month. No pets. Is the studio still available?",
